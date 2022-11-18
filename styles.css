@@ -1,0 +1,54 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    margin-top: 100px;
+    border: black 2px solid;
+    height: 650px;
+    width: 400px;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    justify-content: space-between;
+    grid-template-rows: repeat(5, 20fr);
+    grid-template-columns: repeat(4, 25fr);
+}
+
+.screen {
+    border: black 2px solid;
+    height: 100px;
+    width: inherit;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.keypad {
+    width: inherit;
+    height: inherit;
+    border-radius: 20px;
+    display: grid;
+    grid-template:  repeat(5, 25fr) / repeat(4, 25fr);
+    grid-gap: 5px;
+}
+
+.numeric {
+    display: grid;
+    grid-template: repeat(4, 4fr) / repeat(3, 3fr);
+    grid-area: num;
+    grid-gap: 5px;
+}
+.key {
+    border: black 2px solid;
+    size: auto;
+    grid-row-start: span 1;
+    grid-column-start: span 1;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.key.large {
+    grid-column-start: span 2;
+}
