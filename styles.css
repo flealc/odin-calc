@@ -1,35 +1,43 @@
+@font-face {
+    font-family: "CustomFont";
+    src: url("Digital7.ttf");
+    url("https://yoursite.com/css/fonts/CustomFont.otf") format("opentype"),
+    url("https://yoursite.com/css/fonts/CustomFont.svg#filename") format("svg");
+}
 body{
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .container {
     margin-top: 100px;
     border: black 2px solid;
-    height: 650px;
     width: 400px;
     border-radius: 50px;
-    display: flex;
-    flex-direction: column;
     padding: 50px 30px;
-    justify-content: space-between;
+
     grid-template-rows: repeat(5, 20fr);
     grid-template-columns: repeat(4, 25fr);
     background-color: #231e44;
 }
 
 .screen {
+    display: block;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    font-family: "CustomFont", sans-serif;
+    padding: 0 5px;
+    font-size: 86px;
     border: black 2px solid;
-    height: 100px;
-    width: inherit;
     border-radius: 10px;
     margin-bottom: 40px;
     background-color: aliceblue;
+    text-align: end;
 }
 
 .keypad {
     width: inherit;
-    height: inherit;
     border-radius: 20px;
     display: grid;
     grid-template:  repeat(5, 25fr) / repeat(4, 25fr);
@@ -43,8 +51,9 @@ body{
     grid-gap: 5px;
 }
 .key {
+    padding-top: 30px;
+    padding-bottom: 30px;
     border: black 2px solid;
-    size: auto;
     grid-row-start: span 1;
     grid-column-start: span 1;
     border-radius: 5px;
@@ -63,12 +72,12 @@ body{
 }
 #ac {
     background-color: lightcoral;
-    font-weight: bold;
+
 }
 
 #del {
     background-color: lightpink;
-    font-weight: bold;
+
 }
 #eq {
     background-color: darkorange;
