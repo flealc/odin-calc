@@ -16,22 +16,39 @@ function divide(x, y) {
 }
 
 function operate(operator, x, y) {
+    if (operator === "+") {
+        return add(x, y);
+    }
     return operator(x,y);
 }
 
 const screen = document.querySelector('.screen');
-let displayValue = '';
+let operandBuffer = 0;
 
-const keys = document.querySelectorAll('.key');
+const keys = document.querySelectorAll('.key.num');
 keys.forEach(key => key.addEventListener('click', (e) => displayUpdate(`${key.innerHTML}`)));
 
-// TODO: Create a function that takes the operator and routes the computation to the right function while storing the intermediate
-//result
+const ac = document.querySelector('#ac');
+ac.addEventListener('click', () => screen.innerHTML= '0')
 
-//TODO: Maybe the screen numbers are a div inside the screen div?
+const del = document.querySelector('#del');
+del.addEventListener('click', () => screen.innerHTML = screen.innerHTML.slice(0, screen.innerHTML.length - 1))
+
+const plus = document.querySelector('#add');
+plus.addEventListener('click', function() {
+    if (operandBuffer !== 0) {
+        operandBuffer = add(screen.innerHTML, operandBuffer)
+        screen.innerHTML = `${operandBuffer}`
+    }
+});
+
 
 function displayUpdate(val) {
-    displayValue = displayValue + val;
-    screen.innerHTML = displayValue;
-    console.log(displayValue);
+    if (screen.innerHTML === '0') {
+        screen.innerHTML= val;
+    }
+    else {
+        screen.innerHTML+= val;
+    }
+    
 }

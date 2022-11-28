@@ -23,6 +23,7 @@ body{
 }
 
 .screen {
+    height: 90px;
     display: block;
     word-break: break-all;
     overflow-wrap: break-word;
