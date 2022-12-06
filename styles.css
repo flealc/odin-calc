@@ -25,7 +25,6 @@ body{
 .screen {
     height: 90px;
     display: block;
-    word-break: break-all;
     overflow-wrap: break-word;
     font-family: "CustomFont", sans-serif;
     padding: 0 5px;
