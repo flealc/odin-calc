@@ -37,9 +37,24 @@ function operate(operator, x, y) {
 
 
 function checkFormat(number) {
-    if (number.toString().includes('.') && (number.toString().length > 9)) {
+    
+    if (number.toString().includes('e') && number.toString().length > 9) {
+        /*
+        return '<a href="https://www.youtube.com/watch?v=oHg5SJYRHA0" ' +
+            'style="text-decoration: none; color: black; font-size: 35px;">CLICK SCREEN TO RESET :(</a>';
+         */
+        if (confirm('Sorry, result is too large! Reset needed')) {
+            window.location.href = "https://www.youtube.com/watch?v=oHg5SJYRHA0";
+        }
+        screen.innerHTML = ':( :( :(';
+        return ':( :( :(';
+    }
+    else if (number.toString().includes('.') && (number.toString().length > 9)) {
         
        return number.toFixed(9 - number.toString().indexOf('.'));
+    }
+    else if (number.toString().length > 9) {
+        return checkFormat(number.toExponential(0));
     }
     return number;
 }
@@ -113,7 +128,6 @@ dot.addEventListener('click', function(e) {
     if (!screen.innerHTML.includes('.')) {
         displayUpdate(`${dot.innerHTML}`)
     }
-    
 });
 
  

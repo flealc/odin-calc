@@ -1,6 +1,6 @@
 @font-face {
     font-family: "CustomFont";
-    src: url("Segment7.otf");
+    src: url("digital7.ttf");
 }
 body{
     display: flex;
@@ -27,12 +27,13 @@ body{
     font-family: "CustomFont", sans-serif;
     padding-top: 10px;
     padding-right: 5px;
-    font-size: 70px;
+    font-size: 80px;
     border: black 2px solid;
     border-radius: 10px;
     margin-bottom: 40px;
     background-color: aliceblue;
     text-align: end;
+    -webkit-text-decoration-color: black;
 }
 
 .keypad {
