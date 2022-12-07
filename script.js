@@ -45,15 +45,15 @@ function checkFormat(number) {
 }
 
 function displayUpdate(val) {
-    if (screen.innerHTML.length < 9) {
-        if (newValue) {
-            screen.innerHTML= `${val}`;
-            newValue = false;
-        }
-        else {
-            screen.innerHTML+= `${val}`;
-        }
+    
+    if (newValue) {
+        screen.innerHTML= `${val}`;
+        newValue = false;
     }
+    else {
+        screen.innerHTML+= `${val}`;
+    }
+   
 }
 
 // Variables
@@ -66,7 +66,12 @@ let operator = undefined;
 
 // Event listeners and DOM manipulation
 const keys = document.querySelectorAll('.key.num');
-keys.forEach(key => key.addEventListener('click', (e) => displayUpdate(`${key.innerHTML}`)));
+keys.forEach(key => key.addEventListener('click', function(e) {
+    if (screen.innerHTML.length < 9 || newValue) {
+        displayUpdate(`${key.innerHTML}`);
+    }
+}));
+    
 
 const ac = document.querySelector('#ac');
 ac.addEventListener('click', () => {
@@ -84,6 +89,7 @@ const eq = document.querySelector('#eq');
 eq.addEventListener('click', () => {
     if (operator !== undefined && screen.innerHTML !== 'NICE TRY!'){
         screen.innerHTML = `${operate(operator, operandBuffer, screen.innerHTML)}`;
+        operandBuffer = 0;
         newValue = true;
     }
     

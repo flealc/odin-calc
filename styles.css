@@ -1,8 +1,6 @@
 @font-face {
     font-family: "CustomFont";
-    src: url("Digital7.ttf");
-    url("https://yoursite.com/css/fonts/CustomFont.otf") format("opentype"),
-    url("https://yoursite.com/css/fonts/CustomFont.svg#filename") format("svg");
+    src: url("Segment7.otf");
 }
 body{
     display: flex;
@@ -23,12 +21,13 @@ body{
 }
 
 .screen {
-    height: 90px;
+    height: 80px;
     display: block;
     overflow-wrap: break-word;
     font-family: "CustomFont", sans-serif;
-    padding: 0 5px;
-    font-size: 86px;
+    padding-top: 10px;
+    padding-right: 5px;
+    font-size: 70px;
     border: black 2px solid;
     border-radius: 10px;
     margin-bottom: 40px;
