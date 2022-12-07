@@ -65,8 +65,10 @@ let operator = undefined;
 
 
 // Event listeners and DOM manipulation
-const keys = document.querySelectorAll('.key.num');
-keys.forEach(key => key.addEventListener('click', function(e) {
+
+
+const numKeys = document.querySelectorAll('.key.num');
+numKeys.forEach(key => key.addEventListener('click', function(e) {
     if (screen.innerHTML.length < 9 || newValue) {
         displayUpdate(`${key.innerHTML}`);
     }
@@ -89,7 +91,7 @@ const eq = document.querySelector('#eq');
 eq.addEventListener('click', () => {
     if (operator !== undefined && screen.innerHTML !== 'NICE TRY!'){
         screen.innerHTML = `${operate(operator, operandBuffer, screen.innerHTML)}`;
-        operandBuffer = 0;
+        operator = undefined;
         newValue = true;
     }
     
