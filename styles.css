@@ -60,12 +60,16 @@ body{
     text-align: center;
     font-size: 25px;
     background-color: lightsteelblue;
+    transition: transform 0.1s ease;
 }
 
 .key.large {
     grid-column-start: span 2;
 }
 
+.key:active {
+  transform: scale(0.95);
+}
 .op{
     background-color: coral;
     font-weight: bold;

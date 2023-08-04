@@ -39,7 +39,7 @@ function operate(operator, x, y) {
 function checkFormat(number) {
     
     if (number.toString().includes('e') && number.toString().length > 9) {
-        /*
+        /* :))))))
         return '<a href="https://www.youtube.com/watch?v=oHg5SJYRHA0" ' +
             'style="text-decoration: none; color: black; font-size: 35px;">CLICK SCREEN TO RESET :(</a>';
          */
@@ -99,8 +99,11 @@ ac.addEventListener('click', () => {
 });
 
 const del = document.querySelector('#del');
-del.addEventListener('click', () => 
-    screen.innerHTML = screen.innerHTML.slice(0, screen.innerHTML.length - 1))
+del.addEventListener('click', () => {
+    if (screen.innerHTML !== "0") {
+        screen.innerHTML = screen.innerHTML.slice(0, screen.innerHTML.length - 1)
+    }
+})
 
 const eq = document.querySelector('#eq');
 eq.addEventListener('click', () => {
